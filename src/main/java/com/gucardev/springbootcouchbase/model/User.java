@@ -3,6 +3,7 @@ package com.gucardev.springbootcouchbase.model;
 import java.time.LocalDateTime;
 import java.util.List;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.Id;
@@ -15,6 +16,7 @@ import org.springframework.data.couchbase.core.mapping.id.GenerationStrategy;
 @Document
 @Getter
 @Setter
+@NoArgsConstructor
 public class User {
 
   @Id
