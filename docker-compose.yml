@@ -1,0 +1,10 @@
+version: '3'
+services:
+  couchbase:
+    image: couchbase/server:latest
+    volumes:
+      - ./configure-node.sh:/opt/couchbase/configure-node.sh
+    command: /bin/bash -c "/opt/couchbase/configure-node.sh & /entrypoint.sh couchbase-server"
+    ports:
+      - 8091-8094:8091-8094
+      - 11210:11210
