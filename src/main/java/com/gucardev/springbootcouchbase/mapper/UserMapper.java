@@ -8,13 +8,9 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 
-
-
-
-
-
-
-@Mapper(componentModel = "spring", uses = {AccountMapper.class})
+@Mapper(
+    componentModel = "spring",
+    uses = {AccountMapper.class})
 public interface UserMapper {
 
   @Mapping(target = "accounts", ignore = true)

@@ -17,9 +17,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
   @ExceptionHandler(Exception.class)
   public ResponseEntity<Map<String, String>> handleAllExceptions(Exception exception) {
-    return new ResponseEntity<>(Map.of("error",exception.getMessage()), HttpStatus.NOT_FOUND);
+    return new ResponseEntity<>(Map.of("error", exception.getMessage()), HttpStatus.NOT_FOUND);
   }
-
 
   @Override
   protected ResponseEntity<Object> handleMethodArgumentNotValid(
@@ -30,8 +29,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     Map<String, String> errors = new HashMap<>();
     ex.getBindingResult()
         .getAllErrors()
-        .forEach(
-            x -> errors.put(((FieldError) x).getField(), x.getDefaultMessage()));
+        .forEach(x -> errors.put(((FieldError) x).getField(), x.getDefaultMessage()));
     return ResponseEntity.badRequest().body(errors);
   }
 }

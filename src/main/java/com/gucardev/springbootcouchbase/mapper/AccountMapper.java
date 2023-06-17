@@ -9,7 +9,9 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import org.mapstruct.Named;
 
-@Mapper(componentModel = "spring", uses = {TransactionMapper.class})
+@Mapper(
+    componentModel = "spring",
+    uses = {TransactionMapper.class})
 public interface AccountMapper {
 
   @Named("toDtoWithTransactions")
